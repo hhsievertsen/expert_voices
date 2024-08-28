@@ -27,6 +27,8 @@ iebaltab  i_US_sample i_age   i_American i_European ///
 	replace j_disagree=inlist(j_response,5)
 	replace j_agree=inlist(j_response,3)
 	replace j_stragree=inlist(j_response,7)
+	replace j_anycomment=0 if j_didnotanswer==1
+	replace j_anycomment=0 if j_no_opinion==1
 iebaltab  j_expert j_didnotanswer j_no_opinion ///
 		j_strdisagree  j_disagree j_uncertain ///
 		j_agree j_stragree j_Confidence ///
